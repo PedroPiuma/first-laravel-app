@@ -21,5 +21,8 @@ use Illuminate\Support\Facades\Route;
 //     echo "teste";
 // });
 
-Route::get('/', 'App\Http\Controllers\Teste@index');
-Route::get('/frm', 'App\Http\Controllers\Teste@formulario');
+
+Route::get('/', [App\Http\Controllers\Teste::class, 'index'])->name('home');
+Route::get('/servicos', [App\Http\Controllers\Teste::class, 'servicos'])->name('servicos');
+Route::get('/galeria/{pag}', [App\Http\Controllers\Teste::class, 'galeria'])->name('galeria');
+Route::get('/contatos/{nome}/{apelido?}', [App\Http\Controllers\Teste::class, 'contatos'])->name('contatos');
