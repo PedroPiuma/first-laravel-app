@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Socios;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class Teste extends Controller
 {
@@ -24,11 +26,26 @@ class Teste extends Controller
 
     public function index()
     {
-        return view('home');
+        $model = new Socios;
+        $resultado = $model->getSocios();
+
+        foreach ($resultado as $socio) {
+            echo "<p>" . $socio->nome . "</p>";
+        }
+        // return view('home');
     }
     public function servicos()
     {
-        return view('servicos');
+        // $resultado = DB::table('socios')->get();
+        $resultado = DB::table('socios')->get()->all();
+        // echo "<pre>";
+        // print_r($resultado);
+
+        foreach ($resultado as $socio) {
+            echo "<p>$socio->name</p>";
+        }
+
+        // return view('servicos');
     }
     public function galeria($pagina)
     {
