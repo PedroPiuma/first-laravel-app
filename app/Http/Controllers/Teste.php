@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Socios;
+use App\Models\Socio;
+// use App\Models\Socios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -26,13 +27,28 @@ class Teste extends Controller
 
     public function index()
     {
-        $model = new Socios;
-        $resultado = $model->getSocios();
+        // $model = new Socios;
+        // $resultado = $model->getSocios();
 
-        foreach ($resultado as $socio) {
-            echo "<p>" . $socio->nome . "</p>";
-        }
+        // foreach ($resultado as $socio) {
+        //     echo "<p>" . $socio->id . "</p>";
+        //     echo "<p>" . $socio->nome . "</p>";
+        //     echo "<p>" . $socio->telefone . "</p>";
+        //     echo "<hr>";
+        // }
         // return view('home');
+
+        $socios = Socio::all();
+
+        foreach ($socios as $socio) {
+            echo "$socio->nome <br>";
+        }
+
+        // $socio = new Socio();
+        // $socio->nome = 'Joaquim';
+        // $socio->telefone = '1010';
+        // $socio->email = 'teste@teste.com';
+        // $socio->save();
     }
     public function servicos()
     {
