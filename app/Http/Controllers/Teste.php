@@ -42,7 +42,7 @@ class Teste extends Controller
         // print_r($resultado);
 
         foreach ($resultado as $socio) {
-            echo "<p>$socio->name</p>";
+            echo "<p>$socio->nome</p>";
         }
 
         // return view('servicos');

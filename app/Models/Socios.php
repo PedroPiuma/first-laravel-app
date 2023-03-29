@@ -21,6 +21,7 @@ class Socios
 {
     public function getSocios()
     {
+        // DB::insert("INSERT INTO socios values (0, ?, ?, ?, NOW(), NOW())", ['Luís Pedro', '333', 'email3@email.com']);
         return DB::select("SELECT * FROM socios");
     }
 
