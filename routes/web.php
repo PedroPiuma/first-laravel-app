@@ -27,6 +27,12 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/galeria/{pag}', [App\Http\Controllers\Teste::class, 'galeria'])->name('galeria');
 // Route::get('/contatos/{nome}/{apelido?}', [App\Http\Controllers\Teste::class, 'contatos'])->name('contatos');
 
-// Route::get('/', "Main@formulario")->name('formulario');
-Route::get('/', [App\Http\Controllers\Main::class, 'formulario'])->name('formulario');
-Route::post('/submissao', [App\Http\Controllers\Main::class, 'submissao'])->name('submissao');
+//Route::get('/', "Main@formulario")->name('formulario');
+Route::get('/', [\App\Http\Controllers\Main::class, 'formulario'])->name('formulario');
+Route::post('/submissao', [\App\Http\Controllers\Main::class, 'submissao'])->name('submissao');
+
+Route::get('/upload', [\App\Http\Controllers\Main::class, 'upload'])->name('upload');
+Route::post('/upload_submissao', [\App\Http\Controllers\Main::class, 'upload_submissao'])->name('upload_submissao');
+
+Route::get('/sessao', [\App\Http\Controllers\Main::class, 'sessao']);
+Route::get('/ver_sessao', [\App\Http\Controllers\Main::class, 'ver_sessao']);
